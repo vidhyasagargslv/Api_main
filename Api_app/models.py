@@ -9,9 +9,9 @@ from django.core.files import File
 class Mainai(models.Model):
 
     VERSION_CHOICES = [
-        ('FR', 'Free'),
-        ('PA', 'Paid'),
-        ('FM', 'Freemium'),
+    ('Free', 'Free'),
+    ('Paid', 'Paid'),
+    ('Freemium', 'Freemium'),
     ]
     id = models.AutoField(primary_key=True)
     Title = models.CharField(max_length=100)
@@ -20,14 +20,14 @@ class Mainai(models.Model):
     link = models.URLField(max_length=1000)
     Image = models.ImageField(upload_to='images/')
     version = models.CharField(
-        max_length=2,
+        max_length=8,
         choices=VERSION_CHOICES,
         default='FR',
     )
 
     #todo: field for dynamic page
     Views = models.IntegerField(default=0)
-    rating = models.IntegerField(default=0)
+    rating = models.IntegerField(max_length=1, default=0)
     Description1 = models.TextField(max_length=1000)
     Description2 = models.TextField(max_length=1000)
     keywords = models.CharField(max_length=1000,default='')
