@@ -68,6 +68,12 @@ This is a Django-based API for AI tools.
 
 '''
 
+## Built With
+
+- [Python](https://www.python.org/) - The programming language used.
+- [Django](https://www.djangoproject.com/) - The web framework used.
+- [Django REST Framework](https://www.django-rest-framework.org/) - The toolkit used to build the API.
+
 
 ## Setup
 
