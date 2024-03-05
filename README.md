@@ -13,6 +13,7 @@ This is a Django-based API for AI tools.
 - **Model ViewSets**: The project uses Django Rest Framework's ModelViewSet, which is a class-based view that provides default `list()`, `create()`, `retrieve()`, `update()`, and `destroy()` actions. This reduces the amount of code needed to create the API.
 
 ## Project Structure
+'''bash
 |   db.sqlite3
 |   manage.py
 |   README.md
@@ -65,7 +66,7 @@ This is a Django-based API for AI tools.
         bg_f6ZEghe.png
 
 
-
+'''
 
 
 ## Setup
