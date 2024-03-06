@@ -61,7 +61,7 @@ This is a Django-based API for AI tools.
 |           wsgi.cpython-312.pyc
 |           __init__.cpython-312.pyc
 |
-\---images
+|---images
         bg.png
         bg_f6ZEghe.png
 
