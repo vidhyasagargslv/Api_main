@@ -2,7 +2,7 @@
 
 This is a Django-based API for AI tools.
 
-## Unique Features
+##  Features
 
 - **Hyperlinked Model Serializers**: This project uses Django Rest Framework's HyperlinkedModelSerializer, which uses hyperlinks to represent relationships, rather than primary keys. This makes the API more navigable.
 
