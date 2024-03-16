@@ -2,6 +2,7 @@ from django.db import models
 from PIL import Image
 from io import BytesIO
 from django.core.files import File
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 # Create your models here.
 # Model for creating api for ai tools
@@ -39,16 +40,21 @@ class Mainai(models.Model):
     Tagline = models.CharField(max_length=300)
     link = models.URLField(max_length=1000)
     Image = models.ImageField(upload_to='images/')
+    category = models.CharField(max_length=100,default=None,null=False)
     version = models.CharField(
         max_length=8,
         choices=VERSION_CHOICES,
         default='FR',
     )
     Views = models.IntegerField(default=0)
-    rating = models.IntegerField(max_length=1, default=0)
+    rating = models.IntegerField(default=0,validators=[
+        MinValueValidator(0),  # Minimum value (inclusive)
+        MaxValueValidator(5)  # Maximum value (inclusive)
+    ])
     Description1 = models.TextField(max_length=1000)
     Description2 = models.TextField(max_length=1000)
     keywords = models.CharField(max_length=1000, default='')
+    additional = models.TextField(max_length=255, default='default_category', null=True)
 
     def __str__(self):
         """
@@ -98,4 +104,5 @@ class Mainai(models.Model):
 #?Description1: TextField to store the first description of the mainai.
 #?Description2: TextField to store the second description of the mainai.
 #?keywords: CharField to store the keywords of the mainai.
-    
+
+
